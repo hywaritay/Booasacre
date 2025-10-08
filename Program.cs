@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 IdentityModelEventSource.ShowPII = true;
-builder.Services.AddDbContext<BooasacreContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("comp_sci")));
+builder.Services.AddDbContext<BooasacreContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("api_booasacre")));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHttpContextAccessor();

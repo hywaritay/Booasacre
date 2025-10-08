@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Domain\Controllers\Secure\" />
-    <Folder Include="Domain\Controllers\Security\" />
     <Folder Include="Domain\Infrastructure\Repository\" />
   </ItemGroup>
 
