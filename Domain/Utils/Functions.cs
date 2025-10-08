@@ -72,8 +72,6 @@ public class Functions(IApiUserRepository apiUserRepository)
 
     public static string Generate(int? length = 10, bool? digits = false)
     {
-        // return Guid.NewGuid().ToString("");
-        // string charset = "09182736455463728190ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var charset = digits == true ? "09182736455463728190" : "09182736455463728190ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         if (length != null && length > charset.Length) length = charset.Length;
         var outputChars = new char[length ?? 10];
