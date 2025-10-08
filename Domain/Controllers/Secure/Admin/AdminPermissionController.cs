@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Booasacre.Domain.Controllers.Secure.Admin;
 
 [ApiExplorerSettings(GroupName = Consts.SwaggerDocName.SecureAdmin.Slug)]
-[Authorize(Roles = Consts.Vars.Roles.Admin)]
+//[Authorize(Roles = Consts.Vars.Roles.Admin)]
 [ApiController]
 [Route(Routes.ApiRoute.Secure.Admin.Permission.Base)]
 public class AdminPermissionController(IApiPermissionRepository apiPermissionRepository, ILogger<AdminPermissionController> logger)

@@ -126,7 +126,7 @@ public class AuthController(
     
              var userPermissions = new List<string>
              {
-                 Consts.Vars.Roles.Admin
+                 Consts.Vars.Roles.Admin, Consts.Vars.Roles.SubAdmin, Consts.Vars.Roles.User
              };
              foreach (var userPermission in userPermissions.Select(userPermissionTmp => new ApiUserPermission
                       {
