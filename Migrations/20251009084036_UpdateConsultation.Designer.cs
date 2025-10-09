@@ -4,6 +4,7 @@ using Booasacre.Domain.Infrastructure.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booasacre.Migrations
 {
     [DbContext(typeof(BooasacreContext))]
-    partial class BooasacreContextModelSnapshot : ModelSnapshot
+    [Migration("20251009084036_UpdateConsultation")]
+    partial class UpdateConsultation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -912,18 +915,6 @@ namespace Booasacre.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageFile")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long?>("ImageSize")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("ImageType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

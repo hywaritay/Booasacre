@@ -4,6 +4,7 @@ using Booasacre.Domain.Infrastructure.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booasacre.Migrations
 {
     [DbContext(typeof(BooasacreContext))]
-    partial class BooasacreContextModelSnapshot : ModelSnapshot
+    [Migration("20251008200842_UpdateBenefit")]
+    partial class UpdateBenefit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -528,18 +531,18 @@ namespace Booasacre.Migrations
                     b.Property<string>("DeletedReason")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FKServiceId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ServiceId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FKServiceId");
+                    b.HasIndex("ServiceId");
 
                     b.ToTable("Benefit");
                 });
@@ -590,9 +593,6 @@ namespace Booasacre.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FKServiceId")
-                        .HasColumnType("int");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -605,6 +605,9 @@ namespace Booasacre.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Timeline")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -614,7 +617,7 @@ namespace Booasacre.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FKServiceId");
+                    b.HasIndex("ServiceId");
 
                     b.ToTable("Consultation");
                 });
@@ -914,18 +917,6 @@ namespace Booasacre.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageFile")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long?>("ImageSize")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("ImageType")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -975,20 +966,22 @@ namespace Booasacre.Migrations
 
             modelBuilder.Entity("Booasacre.Domain.Infrastructure.Entity.Content.Benefit", b =>
                 {
-                    b.HasOne("Booasacre.Domain.Infrastructure.Entity.Content.Services", "FKService")
+                    b.HasOne("Booasacre.Domain.Infrastructure.Entity.Content.Services", "Service")
                         .WithMany()
-                        .HasForeignKey("FKServiceId");
+                        .HasForeignKey("ServiceId");
 
-                    b.Navigation("FKService");
+                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("Booasacre.Domain.Infrastructure.Entity.Content.Consultation", b =>
                 {
-                    b.HasOne("Booasacre.Domain.Infrastructure.Entity.Content.Services", "FKService")
+                    b.HasOne("Booasacre.Domain.Infrastructure.Entity.Content.Services", "Service")
                         .WithMany()
-                        .HasForeignKey("FKServiceId");
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("FKService");
+                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("Booasacre.Domain.Infrastructure.Entity.Booasacre.ApiUser", b =>

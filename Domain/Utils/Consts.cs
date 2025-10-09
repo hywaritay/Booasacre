@@ -7,7 +7,7 @@ public static class Consts
     {
         public static class Roles
         {
-            public const string Admin = "ADMIN";
+            public const string Admin = "Admin";
             public const string User = "USER";
             public const string SubAdmin = "SUBADMIN";
             public const string Otp = "OTP";

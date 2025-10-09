@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Booasacre")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2339ed350cae8c77a8eb02298f3cfa5c13f541bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09d068b25446619a2c6a131782e5f971b2935479")]
 [assembly: System.Reflection.AssemblyProductAttribute("Booasacre")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Booasacre")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

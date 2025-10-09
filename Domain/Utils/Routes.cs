@@ -24,12 +24,7 @@ public static class Routes
                 public const string Login = "login";
                 public const string Register = "register";
             }
-
-            public static class Ldap
-            {
-                public const string Base = PrefixSecurity + "/ldap";
-                public const string Login = "login";
-            }
+            
         }
 
         public static class Secure
@@ -39,19 +34,7 @@ public static class Routes
             public static class Admin
             {
                 private const string PrefixSecureAdmin = PrefixSecure + "/admin";
-
-                public static class Branch
-                {
-                    public const string Base = PrefixSecureAdmin + "/branch";
-                    public const string All = "all";
-                    public const string Find = "find";
-                    public const string Create = "create";
-                    public const string Update = "update";
-                    public const string Delete = "delete";
-                    public const string State = "state";
-                }
-
-
+                
                 public static class User
                 {
                     public const string Base = PrefixSecureAdmin + "/user";
@@ -98,6 +81,99 @@ public static class Routes
                     public const string Create = "create";
                 }
             }
+            
+            public static class Content
+            {
+                private const string PrefixSecureContent = PrefixSecure + "/content";
+
+                public static class Services
+                {
+                    public const string Base = PrefixSecureContent + "/services";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+                public static class Benefit
+                {
+                    public const string Base = PrefixSecureContent + "/benefit";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+
+                public static class Consultation
+                {
+                    public const string Base = PrefixSecureContent + "/consultation";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+
+                public static class Contact
+                {
+                    public const string Base = PrefixSecureContent + "/contact";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+
+                public static class ContactInfo
+                {
+                    public const string Base = PrefixSecureContent + "/contactinfo";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+
+                public static class TeamMembers
+                {
+                    public const string Base = PrefixSecureContent + "/teammembers";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+
+                public static class CoreValues
+                {
+                    public const string Base = PrefixSecureContent + "/corevalues";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+
+                public static class Statement
+                {
+                    public const string Base = PrefixSecureContent + "/statement";
+                    public const string All = "all";
+                    public const string Find = "find";
+                    public const string Create = "create";
+                    public const string Update = "update";
+                    public const string Delete = "delete";
+                    public const string State = "state";
+                }
+            }
+
         }
     }
 }
